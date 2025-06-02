@@ -26,6 +26,16 @@ export const featuresMap = {
     renderingStrategies: "SSR / SSG Ready",
     typescript: "TypeScript Ready",
     remoteLocal: "Remote + Local"
+  },
+  "ar-SA": {
+    lightweight: "خفيف الوزن",
+    realtime: "في الوقت الحقيقي",
+    suspense: "تعليق",
+    pagination: "ترقيم الصفحات",
+    backendAgnostic: "مستقل عن الخادم",
+    renderingStrategies: "جاهز لـ SSR / SSG",
+    typescript: "جاهز لـ TypeScript",
+    remoteLocal: "بعيد + محلي"
   }
 };
 
