@@ -18,8 +18,8 @@
   "dependencies": {
     "markdown-to-jsx": "^7.4.0",
     "next": "^15.0.2",
-    "nextra": "workspace:*",
-    "nextra-theme-docs": "workspace:*",
+    "nextra": "^2.0.0", 
+    "nextra-theme-docs": "^2.0.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-intersection-observer": "^8.26.2"
