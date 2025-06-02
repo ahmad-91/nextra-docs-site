@@ -22,8 +22,11 @@ const themeConfig = {
   },
   docsRepositoryBase: "https://github.com/vercel/swr-site/blob/main",
   useNextSeoProps() {
+    const { locale } = useRouter();
     return {
       titleTemplate: "%s – SWR",
+      htmlLang: locale,
+      dir: locale === "ar-SA" ? "rtl" : "ltr",
     };
   },
   toc: {

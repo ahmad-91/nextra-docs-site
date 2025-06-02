@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 
 /**
  * @typedef {"en-US"} DefaultLocale
- * @typedef {DefaultLocale | "zh-CN" | "es-ES" | "fr-FR" | "pt-BR" | "ja" | "ko" | "ru"} Locale
+ * @typedef {DefaultLocale | "ar-SA"} Locale
  * @typedef {{locale?: Locale | undefined; locales?: Locale[] | undefined; defaultLocale?: DefaultLocale | undefined}} TypedRouter
  * @typedef {Omit<import('next/router').NextRouter, "locale" | "locales" | "defaultLocale"> & TypedRouter} NextRouter
  * @template T
@@ -15,32 +15,10 @@ export default function useLocalesMap(localesMap) {
   if (!localesMap) {
     throw new Error("Pass a locales map as argument to useLocalesMap");
   }
-
   if (!isObject(localesMap)) {
-    throw new Error("Locales map must be an object");
+    throw new Error("Pass an object as argument to useLocalesMap");
   }
-
-  if (!localesMap.hasOwnProperty(defaultLocale)) {
-    throw new Error(
-      `Locales map must contain default locale "${defaultLocale}"`
-    );
-  }
-
-  if (
-    localesMap.hasOwnProperty(locale) &&
-    typeof localesMap[locale] !== typeof localesMap[defaultLocale]
-  ) {
-    throw new Error(
-      `Invalid locales map: Shape of "${locale}" must be the same as "${defaultLocale}"`
-    );
-  }
-
-  if (["string", "number", "symbol"].includes(typeof localesMap[defaultLocale])) {
-    return localesMap[locale] || localesMap[defaultLocale];
-  }
-
-  const target = JSON.parse(JSON.stringify(localesMap[defaultLocale]));
-  return mergeDeep(target, localesMap[locale]);
+  return localesMap[locale] || localesMap[defaultLocale];
 }
 
 /**
