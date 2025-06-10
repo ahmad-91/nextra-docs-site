@@ -5,14 +5,12 @@ import { SkipNavLink } from "nextra-theme-docs";
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
-    const locale = ctx.locale || 'en-US';
-    const dir = locale === 'ar-SA' ? 'rtl' : 'ltr';
-    return { ...initialProps, locale, dir };
+    return { ...initialProps };
   }
 
   render() {
     return (
-      <Html lang={this.props.locale} dir={this.props.dir}> {/* Use the locale and dir from props */}
+      <Html>
         <Head />
         <body>
           <SkipNavLink styled />
