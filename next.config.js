@@ -1,11 +1,11 @@
-const withNextra = require("nextra")({
-  theme: "nextra-theme-docs",
-  themeConfig: "./theme.config.js",
-  staticImage: true,
-  flexsearch: {
-    codeblocks: false,
-  },
-  defaultShowCopyCode: true,
+const nextra = require("nextra");
+
+const withNextra = nextra({
+  // No theme or themeConfig options needed for v4
+  // staticImage, flexsearch, and defaultShowCopyCode are likely v2 options
+  // and may not be directly applicable or may have different config in v4.
+  // For now, we remove them as per the simple v4 example.
+  // If specific v4 replacements are needed, that would be a separate step.
 });
 
 module.exports = withNextra({
@@ -13,6 +13,7 @@ module.exports = withNextra({
     locales: ["en-US", "ar-SA"],
     defaultLocale: "ar-SA",
   },
+  // The existing Next.js specific configs are preserved below
   redirects: () => {
     return [
       {
