@@ -37,10 +37,14 @@ body {
   text-align: right;
 }
 
+[dir="rtl"] main {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 [dir="rtl"] .nextra-sidebar-container {
   border-right: none;
   border-left: 1px solid var(--nextra-colors-gray-200);
-  float: right;
 }
 
 [dir="rtl"] .nextra-sidebar-container > div {
@@ -51,7 +55,6 @@ body {
 [dir="rtl"] .nextra-toc {
   border-left: none;
   border-right: 1px solid var(--nextra-colors-gray-200);
-  float: left;
 }
 
 [dir="rtl"] .nextra-toc > div {
